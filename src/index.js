@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import{BrowserRouter as Router} from 'react-router-dom'
 import './index.css';
 import App from './App';
 import store from './components/triviaRedux/store';
@@ -11,12 +12,14 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 const theme = createMuiTheme({palette: {type: 'dark'}});
 
 ReactDOM.render(
+  <Router>
   <ThemeProvider theme={theme}>
     <Provider store={store}>
       <CssBaseline/>
       <App />
     </Provider>
-  </ThemeProvider>,
+  </ThemeProvider>
+  </Router>,
     
   document.getElementById('root')
 );
